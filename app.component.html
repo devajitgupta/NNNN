@@ -1,0 +1,72 @@
+<div class="title">
+  <h1>CRUD APP</h1>
+</div>
+
+<div class="container">
+
+  <div class="main">
+    <form [formGroup]="regForm" (ngSubmit)="onSubmit(regForm.value)">
+      <h1>CRUD App</h1>
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-control" name="name" id="name" formControlName="name">
+
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="text" class="form-control" name="email" id="email" formControlName="email">
+
+      </div>
+      <div class="form-group">
+        <label>City</label>
+        <input type="text" class="form-control" name="city" id="city" formControlName="city">
+
+      </div>
+
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
+
+<div class="show-data">
+  <h1>Show Data</h1>
+<div class="getdata">
+  <span><i class="bi bi-trash"></i></span>
+  <section>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col"> ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">City</th>
+          <th scope="col">Action</th>
+
+        </tr>
+      </thead>
+
+      <tr *ngFor="let user of User; let i = index">
+        <th scope="row"></th>
+        <td>{{user.name}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.city}}</td>
+        <td>
+          <span class="edit"><button type="button" class="btn btn-success btn-sm" (click)="onEdit(user)">Edit</button> </span>
+
+          <span class="delete">
+
+            <button type="button" class="btn btn-success btn-sm" (click)="onDelete(user.id, i)">Delete</button>
+          </span>
+        </td>
+
+
+      </tr>
+
+    </table>
+
+
+  </section>
+</div>
+</div>
