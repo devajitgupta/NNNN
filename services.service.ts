@@ -2,11 +2,13 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from './user';
+import { Login } from './login';
 @Injectable({
   providedIn: 'root'
 })
 export class ServicesService {
   selectedUser!:User;
+  login_url='http://localhost:3000/login';
 
   delete_url='http://localhost:3000';
   url='http://localhost:3000/user';
@@ -21,6 +23,12 @@ export class ServicesService {
 
 
   constructor( private http:HttpClient) { }
+
+  // login info
+userlogin(logininfo:Login):Observable<Login>{
+   
+    return this.http.post<Login>(this.login_url,logininfo)
+  }
 
   getUsers(): Observable<User[]>{
   	return this.http.get<User[]>(this.allUsersUrl);

@@ -35,7 +35,7 @@ export class AppComponent {
     this.regForm = this.fb.group({
       name: ['', [Validators.required]],
       email: ['', [Validators.required]],
-      city: ['', [Validators.required]]
+      password: ['', [Validators.required]]
 
     })
   }
@@ -82,7 +82,7 @@ export class AppComponent {
     this.regForm.setValue({
       name:userId.name,
       email:userId.email,
-      city:userId.city
+      password:userId.password
     })
 
 
@@ -96,7 +96,7 @@ export class AppComponent {
       id: "",
       name: "",
       email: "",
-      city: ""
+      password: ""
     }
   }
 
