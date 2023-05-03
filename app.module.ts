@@ -8,11 +8,13 @@ import { ServicesService } from './services.service';
 import { FormGroup,FormControl,Validators } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule,Routes } from '@angular/router';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
